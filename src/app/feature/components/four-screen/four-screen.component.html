@@ -1,0 +1,30 @@
+<div id="container">
+    <div id="shared-container">
+        <div id="user-picture-container">
+            <a><img id="user-pic" src="../../../../assets/user-icon.svg" alt="Logo Safra" /></a>
+            <p id="greet-message">
+                Olá,<br />
+                <a href="">Investidor</a>
+            </p>
+        </div>
+        <div id="logo-container">
+            <img id="logo" src="../../../../assets/logo-safra-branco.svg" alt="Logo Safra" />
+        </div>
+    </div>
+    <div id="main-section-container">
+
+        <div id="aviso">
+            <p id="prompt-title" style="font-size: 16px;">Digite sua senha para autenticar a transção:</p>
+            <form id="password-confirmation-form" [formGroup]="formPassword" (ngSubmit)="onSubmitConfirm()">
+                <input id="password-field" type="password" maxlength="6" matInput formControlName="passwordConfirm"
+                    type="password" placeholder="Confirme a sua Senha" />
+            </form>
+        </div>
+        <button id="check-options-btn" type="button" (click)="confirm()">Finalizar</button>
+        <button id="check-options-btn" type="button" (click)="retornPage1()">Retornar</button>
+        <div id="whatsapp-logo-container">
+            <p style="font-size: 16px;">Precisa de consultoria?</p>
+            <a href=""><img id="whatsapp-logo" src="../../../../assets/whatsapp-logo.svg" alt="Logo WhatsApp"></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div id="container">
+    <div id="shared-container">
+        <div id="user-picture-container">
+            <a><img id="user-pic" src="../../../../assets/user-icon.svg" alt="Logo Safra" /></a>
+            <p id="greet-message">
+                Olá,<br />
+                <a href="">Investidor</a>
+            </p>
+        </div>
+        <div id="logo-container">
+            <img id="logo" src="../../../../assets/logo-safra-branco.svg" alt="Logo Safra" />
+        </div>
+    </div>
+    <div id="main-section-container">
+        <div id="aviso">
+            <p style="text-align: center; font-size: 19px; font-weight: 600;">
+                Investimentos pré selecionados
+                <br />
+            </p>
+            <div class="col-md-12 justify-content-md-center">
+                <div class="row">
+                    <div class="col-md-12" style="text-align: center;">
+                        <label style="padding-right: 12px; font-size: 16px;">VALE3</label>
+                        <button type="button" id="less" (click)="less1()" [disabled]="disabledLess1 || blockvalues"><i
+                                class="fa fa-minus-circle"></i></button> &nbsp;
+                        <mat-form-field style="width: 70px; text-align: center !important; height: 60px !important;">
+                            <input type="number" matInput type="text" value="" [(ngModel)]="field1" [disabled]="true">
+                            &nbsp;
+                        </mat-form-field>
+                        <button type="button" id="mais" (click)="more1()" [disabled]="blockvalues"><i
+                                class="fa fa-plus-circle"></i></button>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <label style="padding-right: 12px; font-size: 16px;">ITUB4</label>
+                        <button type="button" id="less" (click)="less2()" [disabled]="disabledLess2 || blockvalues"><i
+                                class="fa fa-minus-circle"></i></button> &nbsp;
+                        <mat-form-field style="width: 70px; text-align: center !important; height: 60px !important;">
+                            <input type="number" matInput type="text" value="" [(ngModel)]="field2" [disabled]="true">
+                            &nbsp;
+                        </mat-form-field>
+                        <button type="button" id="mais" (click)="more2()" [disabled]="blockvalues"><i
+                                class="fa fa-plus-circle"></i></button>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <label style="padding-right: 12px; font-size: 16px;">BBDC4</label>
+                        <button type="button" id="less" (click)="less3()" [disabled]="disabledLess3 || blockvalues"><i
+                                class="fa fa-minus-circle"></i></button> &nbsp;
+                        <mat-form-field style="width: 70px; text-align: center !important; height: 60px !important;">
+                            <input type="number" matInput type="text" value="" [(ngModel)]="field3" [disabled]="true">
+                            &nbsp;
+                        </mat-form-field>
+                        <button type="button" id="mais" (click)="more3()" [disabled]="blockvalues"><i
+                                class="fa fa-plus-circle"></i></button>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <label style="padding-right: 12px; font-size: 16px;">ABEV3</label>
+                        <button type="button" id="less" (click)="less4()" [disabled]="disabledLess4 || blockvalues"><i
+                                class="fa fa-minus-circle"></i></button> &nbsp;
+                        <mat-form-field style="width: 70px; text-align: center !important; height: 60px !important;">
+                            <input type="number" matInput type="text" value="" [(ngModel)]="field4" [disabled]="true">
+                            &nbsp;
+                        </mat-form-field>
+                        <button type="button" id="mais" (click)="more4()" [disabled]="blockvalues"><i
+                                class="fa fa-plus-circle"></i></button>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <label style="padding-right: 12px; font-size: 16px;">PETR4</label>
+                        <button type="button" id="less" (click)="less5()" [disabled]="disabledLess5 || blockvalues">
+                            <i class="fa fa-minus-circle"></i></button> &nbsp;
+                        <mat-form-field style="width: 70px; text-align: center !important; height: 60px !important;">
+                            <input type="number" matInput type="text" value="" [(ngModel)]="field5" [disabled]="true">
+                            &nbsp;
+                        </mat-form-field>
+                        <button type="button" id="mais" (click)="more5()" [disabled]="blockvalues"><i
+                                class="fa fa-plus-circle"></i></button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center;">
+                            <button type="button" color="primary" [disabled]="true" mat-button>VER MAIS...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top: 40px; float: right;">
+                <button mat-button color="primary" type="submit"
+                    style="border: 0px solid; background-color: #121F64; font-size: 14px; font-weight: 500; font-family: 'Roboto'; color: white; width: 166px;">
+                    Total R$ {{field1 + field2 + field3 + field4 + field5}},00
+                    <div *ngIf="(field1 + field2 + field3 + field4 + field5) < 10000">
+
+                    </div>
+                </button>
+            </div>
+        </div>
+        <button id="check-options-btn" type="button" (click)="setFineshStep()">Finalizar</button>
+        <button id="check-options-btn" type="button" (click)="retornPage2()">Retornar</button>
+    </div>
+</div>

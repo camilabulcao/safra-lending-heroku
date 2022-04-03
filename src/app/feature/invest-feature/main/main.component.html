@@ -1,0 +1,43 @@
+<body>
+    <div id="container">
+        <div id="logo-container">
+            <img id="logo" src="../../../../assets/logo-safra-branco.svg" alt="Logo Safra" />
+        </div>
+        <div id="form-container">
+            <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <input class="form-input-txt" type="text" placeholder="Agência" formControlName="agencia" required
+                    minlength="5" name="agencia" />
+                <div *ngIf="loginForm.controls.agencia.touched
+                    && loginForm.controls.agencia.errors?.required
+                    || loginForm.controls.agencia.errors?.errorAgencia" class="alert-error">
+                    {{label.error.field_required}}
+                </div>
+                <input class="form-input-txt" type="text" placeholder="Conta" formControlName="conta" required
+                    minlength="8" />
+                <div *ngIf="loginForm.controls.conta.touched
+                    && loginForm.controls.conta.errors?.required
+                    || loginForm.controls.conta.errors?.errorConta" class="alert-error">
+                    {{label.error.field_required}}
+                </div>
+                <input class="form-input-txt" #pwConfirmModel type="password" placeholder="Senha"
+                    formControlName="password" required minlength="8" />
+                <div *ngIf="loginForm.controls.password.touched
+                    && loginForm.controls.password.errors?.required
+                    || loginForm.controls.password.errors?.errorPassword" class="alert-error">
+                    {{label.error.field_required}}
+                </div>
+                <button id="form-input-btn" type="submit" value="Login">{{label.general.login}}</button>
+                <a id="form-forgot-password" href="">{{label.general.i_forgot_my_password}}</a>
+            </form>
+        </div>
+        <div id="footer-container">
+            <ul id="footer-list">
+                <li class="footer-li"><a href="">{{label.footer.seguranca_online}}</a></li>
+                <li class="footer-li"><a href="">{{label.footer.help}}</a></li>
+                <li class="footer-li"><a href="">{{label.footer.contact}}</a></li>
+            </ul>
+            <p id="copyright-mobile">&copy;{{label.Copyright}}</p>
+            <p id="copyright">&copy;{{label.Copyright}}</p>
+        </div>
+    </div>
+</body>

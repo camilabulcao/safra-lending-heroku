@@ -1,0 +1,24 @@
+<body>
+    <ng-container *ngIf="stepInitial">
+        <app-index (nextStepTwo)="nextStepTwo($event)"></app-index>
+    </ng-container>
+
+    <ng-container *ngIf="stepTwo">
+        <app-secondary-screen (nextStepThird)="nextStepThird($event)" (returnStepOne)="returnStepOne($event)">
+        </app-secondary-screen>
+    </ng-container>
+
+    <ng-container *ngIf="stepThird">
+        <app-third-screen (nextStepFour)="nextStepFour($event)" (returnStepTwo)="returnStepTwo($event)">
+        </app-third-screen>
+    </ng-container>
+
+    <ng-container *ngIf="stepFour">
+        <app-four-screen (nextStepFinesh)="nextStepFive($event)" (returnStepThird)="returnStepThird($event)">
+        </app-four-screen>
+    </ng-container>
+
+    <ng-container *ngIf="stepFive">
+        <app-five-screen></app-five-screen>
+    </ng-container>
+</body>
